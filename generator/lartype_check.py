@@ -8,8 +8,7 @@ if "-init" in sys.argv:
 	print "Initialized new " + lartype_logo + " project in " + os.getcwd()
 	if not("lartype" in os.listdir('.')):
 		call(["mkdir", os.getcwd()+"/lartype"])
-	if not("lartype.html" in os.listdir('./lartype')):
-		call(["cp", "/usr/local/bin/_lartype/lartype.html", os.getcwd()+"/lartype/lartype.html"])
+	call(["cp", "/usr/local/bin/_lartype/lartype.html", os.getcwd()+"/lartype/lartype.html"])
 	if not("images" in os.listdir('.')):
 		call(["mkdir", os.getcwd()+"/images"])
 	if not("sources" in os.listdir('.')):
