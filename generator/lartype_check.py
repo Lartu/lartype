@@ -23,6 +23,16 @@ if "-init" in sys.argv:
 			myfile.write("/section.Edit me!.section/")
 	exit(1)
 
+if "-update" in sys.argv:
+	if ("lartype" in os.listdir('.')):
+		print "Updated the " + lartype_logo + " interpreter in the working directory."
+		call(["cp", "/usr/local/bin/_lartype/lartype.html", os.getcwd()+"/lartype/lartype.html"])
+	else:
+		print("\033[31;1mError:\033[0m This directory does not contain a valid Lartype project.")
+		print("Run \033[32;1mlartype -init\033[0m to initialize one or fix missing files.");
+		exit(1)
+	exit(1)
+
 cwd = os.getcwd()
 
 print lartype_logo + " running some checks...",
