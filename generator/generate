@@ -1,5 +1,5 @@
 #Should check if wkhtmltopdf is installed
 python -m SimpleHTTPServer 23416 &
 SERVER=$!
-wkhtmltopdf http://localhost:23416/lartype/lartype.html output.pdf
+wkhtmltopdf http://localhost:23416/lartype/lartype.html output.pdf --page-size A4
 kill $SERVER

@@ -1,5 +1,5 @@
 # lartype
-Lightweight, LaTeX inspired markup website-and-document editor.
+Lightweight, LaTeX inspired markup document editor.
 
 ## How to install
 Run `install_lartype`. Lartype is installed to /usr/local/bin and added to your path.
