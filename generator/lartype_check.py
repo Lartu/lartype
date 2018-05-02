@@ -47,7 +47,7 @@ if(errors > 0):
 files_needed = ["lartype.html"]
 
 for fname in files_needed:
-	if not(fname in os.listdir('.')):
+	if not(fname in os.listdir('./lartype')):
 		print("\n\033[31;1mError:\033[0m Lartype interpreter not found: lartype/" + fname)
 		print("Aborting.")
 		print("Run \033[32;1mlartype -init\033[0m to fix the missing files.");
