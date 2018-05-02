@@ -188,7 +188,7 @@
 			//Cargo el texto
 			var request = new XMLHttpRequest();
 
-			request.open('GET', 'lartype_sources.cfg', true);
+			request.open('GET', '../lartype_sources.cfg', true);
 			console.log("Loading sources list.");
 
 			request.onload = function() {
@@ -221,7 +221,7 @@
 			//Cargo el texto
 			var request = new XMLHttpRequest();
 
-			request.open('GET', 'sources/'+files_to_load[num]+'.lty', true);
+			request.open('GET', '../sources/'+files_to_load[num]+'.lty', true);
 			console.log("Loading sources/" + files_to_load[num] +'.lty');
 
 			request.onload = function() {
@@ -280,15 +280,15 @@
 			texto = texto.replaceAll('.codeblock/', '</code class="codeSection"></pre>');
 			texto = texto.replaceAll('/imagefooter.', '<div class="imageFooter">');
 			texto = texto.replaceAll('.imagefooter/', '</div>');
-			texto = texto.replaceAll('/image.', '<img src="images/');
+			texto = texto.replaceAll('/image.', '<img src="../images/');
 			texto = texto.replaceAll('.image/', '" class="imagen"/>');
-			texto = texto.replaceAll('/imagemid.', '<img src="images/');
+			texto = texto.replaceAll('/imagemid.', '<img src="../images/');
 			texto = texto.replaceAll('.imagemid/', '" class="imagen2"/>');
-			texto = texto.replaceAll('/imagetiny.', '<img src="images/');
+			texto = texto.replaceAll('/imagetiny.', '<img src="../images/');
 			texto = texto.replaceAll('.imagetiny/', '" class="imagen3"/>');
 			texto = texto.replaceAll('/center.', '<center>');
 			texto = texto.replaceAll('.center/', '</center>');
-			texto = texto.replaceAll('/inlineimage.', '<img src="images/');
+			texto = texto.replaceAll('/inlineimage.', '<img src="../images/');
 			texto = texto.replaceAll('.inlineimage/', '" class="imagen4"/>');
 			texto = texto.replaceAll('/parallelarea.', '<table><tr>');
 			texto = texto.replaceAll('.parallelarea/', '</tr></table>');

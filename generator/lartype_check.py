@@ -1,0 +1,49 @@
+import os
+import sys
+from subprocess import call
+
+lartype_logo = ("\033[34;1m\\\033[37;1mLartype\033[33;1m.\033[0m")
+
+if "-init" in sys.argv:
+	print "Initialized new " + lartype_logo + " project in " + os.getcwd()
+	if not("lartype" in os.listdir('.')):
+		call(["mkdir", os.getcwd()+"/lartype"])
+	if not("lartype.html" in os.listdir('./lartype')):
+		call(["cp", "/usr/local/bin/_lartype/lartype.html", os.getcwd()+"/lartype/lartype.html"])
+	if not("images" in os.listdir('.')):
+		call(["mkdir", os.getcwd()+"/images"])
+	if not("sources" in os.listdir('.')):
+		call(["mkdir", os.getcwd()+"/sources"])
+	if not("lartype_sources.cfg" in os.listdir('.')):
+		call(["touch", os.getcwd()+"/lartype_sources.cfg"])
+		with open(os.getcwd()+"/lartype_sources.cfg", "w") as myfile:
+			myfile.write("main")
+	if not("main.lty" in os.listdir('./sources')):
+		call(["touch", os.getcwd()+"/sources/main.lty"])
+		with open(os.getcwd()+"/sources/main.lty", "w") as myfile:
+			myfile.write("/section.Edit me!.section/")
+	exit(1)
+
+cwd = os.getcwd()
+
+print lartype_logo + " running some checks...",
+
+files_needed = ["lartype_sources.cfg", "sources", "lartype"]
+
+for fname in files_needed:
+	if not(fname in os.listdir('.')):
+		print("\n\033[31;1mError:\033[0m Your working directory doesn't contain the following file or directory: " + fname)
+		print("Aborting.")
+		exit(1)
+
+files_needed = ["lartype.html"]
+
+for fname in files_needed:
+	if not(fname in os.listdir('./lartype')):
+		print("\n\033[31;1mError:\033[0m Your working directory doesn't contain the following file or directory: lartype/" + fname)
+		print("Aborting.")
+		exit(1)
+
+print "\033[32;1mEverything okay!\033[0m" 
+
+exit(0)

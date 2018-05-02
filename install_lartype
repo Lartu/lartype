@@ -1,0 +1,8 @@
+sudo cp highlighting/lartype.lang /usr/share/gtksourceview-3.0/language-specs/
+sudo mkdir /usr/local/bin/_lartype
+sudo cp lartype/lartype.html /usr/local/bin/_lartype/lartype.html
+sudo cp generator/generate /usr/local/bin/_lartype/generate
+sudo cp generator/lartype_run /usr/local/bin/_lartype/lartype_run
+sudo cp generator/lartype_check.py /usr/local/bin/_lartype/lartype_check.py
+sudo ln -s /usr/local/bin/_lartype/lartype_run /usr/local/bin/lartype -f
+echo "Lartype successfully installed!"
