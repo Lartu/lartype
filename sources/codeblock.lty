@@ -1,0 +1,33 @@
+/comm.
+	Segunda parte del informe
+.comm/
+
+/sectiontitle.
+	Bloques de código
+.sectiontitle/
+
+/section.
+	En ocasiones el usuario querrá agregar fragmentos de código que consistan de varias lineas, en lugar de los extractos in-line proporcionados por /code.code.code/. Y aunque es posible construir dichos fragmentos combinando /code.code.code/ con /code.break.code/, Lartype provee la etiqueta /code.codeblock.code/ para tal fin. Para usarla basta con encerrar el código deseado entre las etiquetas /code.//.codeblock..code/ y /code..codeblock//..code/./sbreak.Ejemplo:
+.section/
+
+/codeblock.
+section .text
+monocromatizar_inf_asm:
+	; === Armo mi stack frame ===
+	push rbp
+	mov rbp, rsp
+	sub rsp, 24
+	%define mono_row_size [rbp-8]
+	%define mono_alto [rbp-16]
+	push r12
+	push r13
+	push r14
+.codeblock/
+
+/imagefooter.
+	(Código 1. Extracto de monocromatizar_inf.asm)
+.imagefooter/
+
+/section.
+	Es importante notar que el código se pega sin edición alguna en el documento, por lo que indentarlo junto al resto puede provocar que aparezcan espacios no deseados antes del mismo. Recomiendo fuertemente no envolverlo en una sección.
+.section/

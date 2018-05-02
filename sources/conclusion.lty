@@ -1,0 +1,8 @@
+/sectiontitle.
+	¿Por qué Lartype?
+.sectiontitle/
+
+/section.
+	Lartype surgió de la necesidad específica de tener un lenguaje de generación de documentos como LaTeX, pero que no pesara tanto, que permitiera editar documentos en un repositorio en paralelo sin miedo a que los pushes de un editor generaran merge-conflicts con los de otro, ni a que las adendas de uno rompieran el formato de lo escrito por otro (por ejemplo la anexión de una imagen); por lo que es ideal para trabajos en grupo. Es sumamente sencillo de usar, funciona una vez fuera de la caja y no requiere configuraciones.
+.section/
+

@@ -1,0 +1,30 @@
+/comm.
+	Segunda parte del informe
+.comm/
+
+/sectiontitle.
+	Imágenes
+.sectiontitle/
+
+/section.
+	Lartype permite que se carguen imágenes al documento usando la etiquetas /code.image.code/, /code.imagemid.code/ o /code.imagetiny.code/. Se espera que entre etiquetas se encuentre el nombre completo de la imagen, que deberá estar ubicada en la carpeta /code.//.images.code/ del directorio raiz de Lartype.
+.section/
+
+/parallelarea.
+	/parallel.
+		/imagetiny.hamster.jpg.imagetiny/
+		/imagefooter.
+			Imagen 1./break.Hamster ruso /i.(phodopus sungorus).i/
+		.imagefooter/
+	.parallel/
+	/parallel.
+		/imagetiny.samoyedo.jpg.imagetiny/
+		/imagefooter.
+			Imagen 2./break.Perro samoyedo
+		.imagefooter/
+	.parallel/
+.parallelarea/
+
+/section.
+	La diferencia entre /code.image.code/, /code.imagemid.code/ e /code.imagetiny.code/ radica en el tamaño al que se mostrará la imagen. Al usar /code.image.code/ no se limita el ancho de la imagen, que podrá ser tan ancha como quepa en la página del documento. Por otro lado, /code.imagemid.code/ y /code.imagetiny.code/ limitan el ancho de la imagen al 60% y al 30% del ancho de la página, respectivamente. Recomiendo fuertemente no envolver imágenes en una sección para evitar pérdida de sangrías.
+.section/

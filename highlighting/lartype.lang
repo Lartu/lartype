@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<language id="lartype" name="Lartype" version="2.0" _section="Markup">
+
+	<metadata>
+		 <property name="mimetypes">text/x-lartype</property>
+		<property name="globs">*.lty</property>
+	</metadata>
+
+	<styles>
+		<style id="comment" name="Comment" map-to="def:comment"/>
+		<style id="string" name="String" map-to="def:string"/>
+		<style id="escaped-character" name="Escaped Character" map-to="def:special-char"/>
+		<style id="preprocessor" name="Preprocessor" map-to="def:preprocessor"/>
+		<style id="included-file" name="Included File" map-to="def:string"/>
+		<style id="stag" name="Standalone Tag" map-to="def:string"/>
+		<style id="tag" name="Tag" map-to="def:identifier"/>
+		<style id="sstag" name="Data Type" map-to="def:preprocessor"/>
+	</styles>
+
+	<definitions>
+		<context id="lartype">
+			<include>
+				<context id="comment" style-ref="comment">
+					<start>\/comm\.</start>
+					<end>\.comm\/</end>
+				</context>
+
+				<context id="escaped-character" style-ref="escaped-character">
+					<prefix>\/</prefix>
+					<suffix>\.</suffix>
+					<keyword>\/</keyword>
+					<keyword>\[</keyword>
+					<keyword>\]</keyword>
+				</context>
+
+				<context id="opening-area-tag" style-ref="tag">
+					<prefix>\/</prefix>
+					<suffix>\.</suffix>
+					<keyword>title</keyword>
+					<keyword>section</keyword>
+					<keyword>titlearea</keyword>
+					<keyword>subtitle</keyword>
+					<keyword>sectiontitle</keyword>
+					<keyword>code</keyword>
+					<keyword>right</keyword>
+					<keyword>doctitle</keyword>
+					<keyword>codeblock</keyword>
+					<keyword>imagefooter</keyword>
+					<keyword>image</keyword>
+					<keyword>imagemid</keyword>
+					<keyword>imagetiny</keyword>
+					<keyword>inlineimage</keyword>
+					<keyword>parallelarea</keyword>
+				</context>
+
+				<context id="closing-area-tag" style-ref="tag">
+					<prefix>\.</prefix>
+					<suffix>\/</suffix>
+					<keyword>title</keyword>
+					<keyword>section</keyword>
+					<keyword>titlearea</keyword>
+					<keyword>subtitle</keyword>
+					<keyword>sectiontitle</keyword>
+					<keyword>code</keyword>
+					<keyword>right</keyword>
+					<keyword>doctitle</keyword>
+					<keyword>codeblock</keyword>
+					<keyword>imagefooter</keyword>
+					<keyword>image</keyword>
+					<keyword>imagemid</keyword>
+					<keyword>imagetiny</keyword>
+					<keyword>inlineimage</keyword>
+					<keyword>parallelarea</keyword>
+				</context>
+
+				<context id="standalone-tag" style-ref="stag">
+					<prefix>\/</prefix>
+					<suffix>\.</suffix>
+					<keyword>line</keyword>
+					<keyword>li</keyword>
+					<keyword>sbreak</keyword>
+					<keyword>break</keyword>
+					<keyword>pagebreak</keyword>
+				</context>
+
+				<context id="style-opening-tag" style-ref="sstag">
+					<prefix>\/</prefix>
+					<suffix>\.</suffix>
+					<keyword>b</keyword>
+					<keyword>i</keyword>
+					<keyword>center</keyword>
+					<keyword>parallel</keyword>
+				</context>
+	
+				<context id="link-tag" style-ref="sstag">
+					<prefix>\/</prefix>
+					<suffix>\[</suffix>
+					<keyword>link</keyword>
+				</context>
+
+				<context id="mid-tag" style-ref="sstag">
+					<prefix>\]</prefix>
+					<suffix>\.</suffix>
+					<keyword>link</keyword>
+				</context>
+
+				<context id="style-closing-tag" style-ref="sstag">
+					<prefix>\.</prefix>
+					<suffix>\/</suffix>
+					<keyword>b</keyword>
+					<keyword>i</keyword>
+					<keyword>link</keyword>
+					<keyword>center</keyword>
+					<keyword>parallel</keyword>
+				</context>
+				
+			</include>
+		</context>
+	</definitions>
+</language>
