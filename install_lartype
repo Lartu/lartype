@@ -1,3 +1,7 @@
+echo "[*] Installing Lartype"
+echo "[*] Checking dependencies..."
+command -v wkhtmltopdf >/dev/null 2>&1 || { echo >&2 "[*] Lartype requires wkhtmltopdf, but it's not installed. Aborting."; exit 1; }
+
 echo "[*] Copying Lartype language highlighting to /usr/share/gtksourceview-3.0/language-specs/"
 sudo cp highlighting/lartype.lang /usr/share/gtksourceview-3.0/language-specs/
 
