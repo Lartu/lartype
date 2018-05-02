@@ -1,8 +1,19 @@
+echo "[*] Copying Lartype language highlighting to /usr/share/gtksourceview-3.0/language-specs/"
 sudo cp highlighting/lartype.lang /usr/share/gtksourceview-3.0/language-specs/
+
+echo "[*] Removing old Lartype directory if present"
+sudo rm -rf /usr/local/bin/_lartype
+
+echo "[*] Creating directory /usr/local/bin/_lartype"
 sudo mkdir /usr/local/bin/_lartype
+
+echo "[*] Copying files to /usr/local/bin/_lartype"
 sudo cp lartype/lartype.html /usr/local/bin/_lartype/lartype.html
 sudo cp generator/generate /usr/local/bin/_lartype/generate
 sudo cp generator/lartype_run /usr/local/bin/_lartype/lartype_run
 sudo cp generator/lartype_check.py /usr/local/bin/_lartype/lartype_check.py
+
+echo "[*] Creating symlink in /usr/local/bin"
 sudo ln -s /usr/local/bin/_lartype/lartype_run /usr/local/bin/lartype -f
-echo "Lartype successfully installed!"
+
+echo "[*] Lartype successfully installed!"

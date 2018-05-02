@@ -30,18 +30,27 @@ print lartype_logo + " running some checks...",
 
 files_needed = ["lartype_sources.cfg", "sources", "lartype"]
 
+errors = 0
+
 for fname in files_needed:
 	if not(fname in os.listdir('.')):
-		print("\n\033[31;1mError:\033[0m Your working directory doesn't contain the following file or directory: " + fname)
-		print("Aborting.")
-		exit(1)
+		if(errors == 0):
+			print("")
+		print("\033[31;1mError:\033[0m Your working directory doesn't contain the following file or directory: " + fname)
+		errors = errors + 1
+
+if(errors > 0):
+	print("Aborting.")
+	print("Run \033[32;1mlartype -init\033[0m to fix the missing files.");
+	exit(1)
 
 files_needed = ["lartype.html"]
 
 for fname in files_needed:
-	if not(fname in os.listdir('./lartype')):
-		print("\n\033[31;1mError:\033[0m Your working directory doesn't contain the following file or directory: lartype/" + fname)
+	if not(fname in os.listdir('.')):
+		print("\n\033[31;1mError:\033[0m Lartype interpreter not found: lartype/" + fname)
 		print("Aborting.")
+		print("Run \033[32;1mlartype -init\033[0m to fix the missing files.");
 		exit(1)
 
 print "\033[32;1mEverything okay!\033[0m" 
