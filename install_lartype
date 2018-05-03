@@ -1,6 +1,21 @@
 echo "[*] Installing Lartype"
 echo "[*] Checking dependencies..."
-command -v wkhtmltopdf >/dev/null 2>&1 || { echo >&2 "[*] Lartype requires wkhtmltopdf, but it's not installed. Aborting."; exit 1; }
+command -v wkhtmltopdf >/dev/null 2>&1 || { 
+	echo "[*] Lartype requires wkhtmltopdf, but it's not installed."
+	echo "[*] Downloading wkhtmltopdf"
+	wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+	echo "[*] Uncompressing wkhtmltopdf to /wkhtmltox"
+	sudo tar xf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+	echo "[*] Installing wkhtmltopdf to /usr/bin"
+	sudo mv wkhtmltox/bin/wkhtmlto* /usr/bin/
+	echo "[*] Removing /wkhtmltox"
+	rm -rf wkhtmltox
+	echo "[*] Removing the downloaded file"
+	rm wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
+	echo "[*] Ready!"
+}
+echo "[*] Copying fonts to /usr/local/share/fonts"
+sudo cp fonts/* /usr/local/share/fonts
 
 echo "[*] Copying Lartype language highlighting to /usr/share/gtksourceview-3.0/language-specs/"
 sudo cp highlighting/lartype.lang /usr/share/gtksourceview-3.0/language-specs/

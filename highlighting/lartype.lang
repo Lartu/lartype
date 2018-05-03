@@ -51,6 +51,11 @@
 					<keyword>imagetiny</keyword>
 					<keyword>inlineimage</keyword>
 					<keyword>parallelarea</keyword>
+					<keyword>image80</keyword>
+					<keyword>image60</keyword>
+					<keyword>image40</keyword>
+					<keyword>image20</keyword>
+					<keyword>rightblock</keyword>
 				</context>
 
 				<context id="closing-area-tag" style-ref="tag">
@@ -71,6 +76,11 @@
 					<keyword>imagetiny</keyword>
 					<keyword>inlineimage</keyword>
 					<keyword>parallelarea</keyword>
+					<keyword>image80</keyword>
+					<keyword>image60</keyword>
+					<keyword>image40</keyword>
+					<keyword>image20</keyword>
+					<keyword>rightblock</keyword>
 				</context>
 
 				<context id="standalone-tag" style-ref="stag">
@@ -90,6 +100,11 @@
 					<keyword>i</keyword>
 					<keyword>center</keyword>
 					<keyword>parallel</keyword>
+					<keyword>anchor</keyword>
+					<keyword>size1</keyword>
+					<keyword>size2</keyword>
+					<keyword>size3</keyword>
+					<keyword>size4</keyword>
 				</context>
 	
 				<context id="link-tag" style-ref="sstag">
@@ -112,6 +127,11 @@
 					<keyword>link</keyword>
 					<keyword>center</keyword>
 					<keyword>parallel</keyword>
+					<keyword>anchor</keyword>
+					<keyword>size1</keyword>
+					<keyword>size2</keyword>
+					<keyword>size3</keyword>
+					<keyword>size4</keyword>
 				</context>
 				
 			</include>
