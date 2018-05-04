@@ -1,19 +1,5 @@
 echo "[*] Installing Lartype"
-echo "[*] Checking dependencies..."
-command -v wkhtmltopdf >/dev/null 2>&1 || { 
-	echo "[*] Lartype requires wkhtmltopdf, but it's not installed."
-	echo "[*] Downloading wkhtmltopdf"
-	wget https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-	echo "[*] Uncompressing wkhtmltopdf to /wkhtmltox"
-	sudo tar xf wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-	echo "[*] Installing wkhtmltopdf to /usr/bin"
-	sudo mv wkhtmltox/bin/wkhtmlto* /usr/bin/
-	echo "[*] Removing /wkhtmltox"
-	rm -rf wkhtmltox
-	echo "[*] Removing the downloaded file"
-	rm wkhtmltox-0.12.4_linux-generic-amd64.tar.xz
-	echo "[*] Ready!"
-}
+
 echo "[*] Copying fonts to /usr/local/share/fonts"
 sudo cp fonts/* /usr/local/share/fonts
 
@@ -27,10 +13,9 @@ echo "[*] Creating directory /usr/local/bin/_lartype"
 sudo mkdir /usr/local/bin/_lartype
 
 echo "[*] Copying files to /usr/local/bin/_lartype"
-sudo cp lartype/lartype.html /usr/local/bin/_lartype/lartype.html
-sudo cp generator/generate /usr/local/bin/_lartype/generate
-sudo cp generator/lartype_run /usr/local/bin/_lartype/lartype_run
-sudo cp generator/lartype_check.py /usr/local/bin/_lartype/lartype_check.py
+sudo cp lartype/* /usr/local/bin/_lartype
+sudo cp generator/* /usr/local/bin/_lartype
+sudo cp bin/* /usr/local/bin/_lartype
 
 echo "[*] Creating symlink in /usr/local/bin"
 sudo ln -s /usr/local/bin/_lartype/lartype_run /usr/local/bin/lartype -f
