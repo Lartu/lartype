@@ -1,10 +1,14 @@
+/*TODO:
+Para agregar los bordes de debug con js habría que 
+hacer un archivo debug.css que tenga solo los objetos 
+que tienen borde con sus bordes (y nada más) y se 
+agregue desde js cuando sea necesario.*/
+
 body{
 	font-family: "Times New Roman";
 	font-size:15px;
 	text-align:justify;
 	padding:20px;
-	padding-top:60px;
-	padding-bottom:60px;
 	background:white;
 	color:black;
 	/*max-width:595px; Ancho A4 en 72dpi*/
@@ -27,6 +31,7 @@ pre{
 	margin:0px;
 	margin-top:0px;
 	margin-bottom:20px;
+	/*border:1px solid #17c0eb;*/
 }
 
 .code_section{
@@ -41,23 +46,11 @@ pre{
 	margin-bottom:20px;
 }
 
-table{
-	font-size:inherit;
-}
-
-td{
-	font-size:inherit;
-}
-
-td .code_section{
-	page-break-inside: initial !important;
-	font-size: 13px;
-}
-
 img{
 	margin:auto;
 	margin-top:0px;
 	margin-bottom:20px;
+	max-width:100%;
 }
 
 .right img{
@@ -68,19 +61,25 @@ img{
 .image{
 	page-break-inside: avoid !important;
 	display:block;
-	max-width: 595px;
+	max-width: 100%;
 }
 
 .image_mid{
 	page-break-inside: avoid !important;
 	display:block;
-	max-width: 357px;
+	max-width: 80%;
+}
+
+.image_small{
+	page-break-inside: avoid !important;
+	display:block;
+	max-width: 60%;
 }
 
 .image_tiny{
 	page-break-inside: avoid !important;
 	display:block;
-	max-width: 178px;
+	max-width: 30%;
 }
 
 .image_inline{
@@ -103,27 +102,41 @@ img{
 
 .size_4{
 	font-size:26px;
+	margin:0px;
 }
 
 .size_3{
 	font-size:20px;
+	margin:0px;
 }
 
 .size_2{
 	font-size:17px;
+	margin:0px;
 }
 
 .size_1{
 	font-size:14px;
+	margin:0px;
 }
 
 .size_0{
 	font-size:10px;
+	margin:0px;
 }
 
 .halfbreak{
 	margin:0px;
-	margin-top:10px;
+	height:10px;
+	padding:0px;
+	/*border: 1px solid #ff4d4d;*/
+}
+
+.break{
+	margin:0px;
+	height:20px;
+	padding:0px;
+	/*border: 1px solid #ff3838;*/
 }
 
 hr{
@@ -149,6 +162,9 @@ code{
 
 table{
 	width: 100%;
+	margin:0px;
+	/*border: 1px solid #c56cf0;*/
+	font-size:inherit;
 }
 
 td{
@@ -156,6 +172,13 @@ td{
 	vertical-align:top;
 	text-align: justify;
 	overflow: hidden;
+	/*border: 1px solid #ffaf40;*/
+	font-size:inherit;
+}
+
+td .code_section{
+	page-break-inside: initial !important;
+	font-size: 13px;
 }
 
 .parallel90{

@@ -3,6 +3,6 @@ echo "[*] Starting Lartype server"
 python /usr/local/bin/_lartype/threadingserver.py &
 SERVER=$!
 #echo "[*] Go!"
-/usr/local/bin/_lartype/wkhtmltopdf -B 20mm -T 20mm -R 20mm -L 20mm --disable-smart-shrinking --footer-right "[page]/[topage]" http://localhost:23416/lartype/lartype.html output.pdf 
+/usr/local/bin/_lartype/wkhtmltopdf -B 30mm -T 30mm -R 20mm -L 20mm --disable-smart-shrinking --header-html http://localhost:23416/lartype/header.html --footer-html http://localhost:23416/lartype/footer.html http://localhost:23416/lartype/lartype.html output.pdf 
 kill $SERVER
 echo "[*] Done!"

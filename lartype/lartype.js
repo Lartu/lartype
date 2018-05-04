@@ -78,8 +78,9 @@ var files_to_load=[]
 		texto = texto.replaceAll('>', '&gt;');
 		texto = texto.replaceAll('<', '&lt;');
 
-		texto = texto.replaceAll('/section.', '<p class="section">');
-		texto = texto.replaceAll('.section/', '</p>');
+		texto = texto.replaceAll('/section.', '<div class="section">');
+		texto = texto.replaceAll('.section/', '</div>');
+		texto = texto.replaceAll('/s.', '&nbsp;&nbsp;&nbsp;&nbsp;');
 		texto = texto.replaceAll('/b.', '<b>');
 		texto = texto.replaceAll('.b/', '</b>');
 		texto = texto.replaceAll('/i.', '<i>');
@@ -91,8 +92,8 @@ var files_to_load=[]
 		texto = texto.replaceAll('.right/', '</div>');
 		texto = texto.replaceAll('/code.', '<code>');
 		texto = texto.replaceAll('.code/', '</code>');
-		texto = texto.replaceAll('/li.', '<div style="margin-top:10px"></div><span style="margin-left:2.3em; margin-right:0.5em;">•</span>');
-		texto = texto.replaceAll('/break.', '<br>');
+		texto = texto.replaceAll('/li.', '&nbsp;&nbsp;&nbsp;<span style="margin-right:0.5em;">•</span>');
+		texto = texto.replaceAll('/break.', '<div class="break"></div>');
 		texto = texto.replaceAll('/halfbreak.', '<div class="halfbreak"></div>');
 		texto = texto.replaceAll('/pagebreak.', '<div class="pagebreak"></div>');
 		texto = texto.replaceAll('/codeblock.', '<pre><code class="code_section">');
@@ -103,14 +104,16 @@ var files_to_load=[]
 		texto = texto.replaceAll('.image/', '" class="image"/>');
 		texto = texto.replaceAll('/imagemid.', '<img src="../images/');
 		texto = texto.replaceAll('.imagemid/', '" class="image_mid"/>');
+		texto = texto.replaceAll('/imagesmall.', '<img src="../images/');
+		texto = texto.replaceAll('.imagesmall/', '" class="image_small"/>');
 		texto = texto.replaceAll('/imagetiny.', '<img src="../images/');
 		texto = texto.replaceAll('.imagetiny/', '" class="image_tiny"/>');
 		texto = texto.replaceAll('/center.', '<div class="center">');
 		texto = texto.replaceAll('.center/', '</div>');
 		texto = texto.replaceAll('/inlineimage.', '<img src="../images/');
 		texto = texto.replaceAll('.inlineimage/', '" class="image_inline"/>');
-		texto = texto.replaceAll('/parallelarea.', '<table><tr>');
-		texto = texto.replaceAll('.parallelarea/', '</tr></table>');
+		texto = texto.replaceAll('/parallelsection.', '<table><tr>');
+		texto = texto.replaceAll('.parallelsection/', '</tr></table>');
 		texto = texto.replaceAll('/parallel.', '<td>');
 		texto = texto.replaceAll('.parallel/', '</td>');
 		texto = texto.replaceAll('/comm.', '<!--');
