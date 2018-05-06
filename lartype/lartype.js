@@ -93,6 +93,7 @@ var files_to_load=[]
 		texto = texto.replaceAll('/code.', '<code>');
 		texto = texto.replaceAll('.code/', '</code>');
 		texto = texto.replaceAll('/li.', '&nbsp;&nbsp;&nbsp;<span style="margin-right:0.5em;">•</span>');
+		texto = texto.replaceAll('/linebreak.', "<br>");
 		texto = texto.replaceAll('/break.', '<div class="break"></div>');
 		texto = texto.replaceAll('/halfbreak.', '<div class="halfbreak"></div>');
 		texto = texto.replaceAll('/pagebreak.', '<div class="pagebreak"></div>');
