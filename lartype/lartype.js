@@ -151,7 +151,7 @@ var files_to_load=[]
 		texto = texto.replaceAll('.parallel20/', '</td>');
 		texto = texto.replaceAll('/parallel10.', '<td class="parallel10">');
 		texto = texto.replaceAll('.parallel10/', '</td>');
-		texto = texto.replaceAll('/todo.', '<div class="todo">');
+		texto = texto.replaceAll('/todo.', '<div class="todo">TODO: ');
 		texto = texto.replaceAll('.todo/', '</div>');
 
 		//Esto siempre va al final

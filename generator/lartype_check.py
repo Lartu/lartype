@@ -4,6 +4,19 @@ from subprocess import call
 
 lartype_logo = ("\033[34;1m\\\033[37;1mLartype\033[33;1m.\033[0m")
 
+if "-pull-update" in sys.argv :
+	print "Downloading latest "+lartype_logo+" version..."
+	call(["wget", "https://github.com/Lartu/lartype/archive/master.zip"])
+	print "Unpacking..."
+	call(["unzip", "-o", "master.zip"])
+	print "Finding installer..."
+	call(["sh", "lartype-master/install_lartype"])
+	print "Cleaning up..."
+	call(["rm", "-rf", "lartype-master"])
+	call(["rm", "master.zip*"])
+	call(["lartype", "-update"])
+	exit(1)
+
 if "-init" in sys.argv or "-fix" in sys.argv :
 	if "-init" in sys.argv:
 		print "Initialized new " + lartype_logo + " project in " + os.getcwd()
