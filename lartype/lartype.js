@@ -167,7 +167,7 @@ var files_to_load=[]
         var matches = document.querySelectorAll("code");
         for(var index in matches) {
 			try{
-				if(matches[index].className == "codeSection"){
+				if(matches[index].className == "code_section"){
 					var lineas = matches[index].innerHTML.split("\n");
 					matches[index].innerHTML = "";
 					var counter = 1;
