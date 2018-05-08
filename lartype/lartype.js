@@ -90,7 +90,7 @@ var files_to_load=[]
 		texto = texto.replaceAll('/line.', '<hr>');
 		texto = texto.replaceAll('/right.', '<div class"right">');
 		texto = texto.replaceAll('.right/', '</div>');
-		texto = texto.replaceAll('/code.', '<code>');
+		texto = texto.replaceAll('/code.', '<code class="inlineCode">');
 		texto = texto.replaceAll('.code/', '</code>');
 		texto = texto.replaceAll('/li.', '&nbsp;&nbsp;&nbsp;<span style="margin-right:0.5em;">•</span>');
 		texto = texto.replaceAll('/linebreak.', "<br>");
@@ -151,6 +151,8 @@ var files_to_load=[]
 		texto = texto.replaceAll('.parallel20/', '</td>');
 		texto = texto.replaceAll('/parallel10.', '<td class="parallel10">');
 		texto = texto.replaceAll('.parallel10/', '</td>');
+		texto = texto.replaceAll('/todo.', '<div class="todo">');
+		texto = texto.replaceAll('.todo/', '</div>');
 
 		//Esto siempre va al final
 		texto = texto.replaceAll('/[.', '[');
@@ -161,6 +163,7 @@ var files_to_load=[]
 		document.body.innerHTML = texto;
 
 		//Cosas post HTML
+		//Tabulo code blocks
         var matches = document.querySelectorAll("code");
         for(var index in matches) {
 			try{
@@ -174,6 +177,18 @@ var files_to_load=[]
 						counter++;
 					}
 					console.log(matches[index].innerHTML);
+				}
+			}catch(e){
+
+			}
+        }
+
+		//Saco espacios de /code.s
+		matches = document.querySelectorAll("code");
+        for(var index in matches) {
+			try{
+				if(matches[index].className == "inlineCode"){
+					matches[index].innerHTML = matches[index].innerHTML.replaceAll(' ', '&nbsp;');
 				}
 			}catch(e){
 

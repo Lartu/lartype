@@ -224,3 +224,10 @@ td .code_section{
 .parallel10{
 	width: 10%;
 }
+
+.todo{
+	font-family:"Droid Sans Mono";
+	font-size:12px;
+	color: #e67e22;
+	background:#ffeaa7;
+}
