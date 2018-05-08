@@ -78,9 +78,13 @@ var files_to_load=[]
 		texto = texto.replaceAll('>', '&gt;');
 		texto = texto.replaceAll('<', '&lt;');
 
+		//Reemplazos sintácticos de lartype por lartype
+		texto = texto.replaceAll('/li.', '/halfbreak./s.•&nbsp;');
+
+		//Reemplazos sintácticos de lartype por html
 		texto = texto.replaceAll('/section.', '<div class="section">');
 		texto = texto.replaceAll('.section/', '</div>');
-		texto = texto.replaceAll('/s.', '&nbsp;&nbsp;&nbsp;&nbsp;');
+		texto = texto.replaceAll('/s.', '<div style="display:inline-block; margin:0px; padding:0px; width:20px"></div>');
 		texto = texto.replaceAll('/b.', '<b>');
 		texto = texto.replaceAll('.b/', '</b>');
 		texto = texto.replaceAll('/i.', '<i>');
@@ -92,7 +96,6 @@ var files_to_load=[]
 		texto = texto.replaceAll('.right/', '</div>');
 		texto = texto.replaceAll('/code.', '<code class="inlineCode">');
 		texto = texto.replaceAll('.code/', '</code>');
-		texto = texto.replaceAll('/li.', '&nbsp;&nbsp;&nbsp;<span style="margin-right:0.5em;">•</span>');
 		texto = texto.replaceAll('/linebreak.', "<br>");
 		texto = texto.replaceAll('/break.', '<div class="break"></div>');
 		texto = texto.replaceAll('/halfbreak.', '<div class="halfbreak"></div>');
