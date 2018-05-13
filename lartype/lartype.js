@@ -175,7 +175,7 @@ var files_to_load=[]
 					var counter = 1;
 					for(a = 0; a < lineas.length; a++){
 						if(lineas[a].trim().length == 0) continue;
-						matches[index].innerHTML += (counter>1?"<br>":"") + (counter) + " "+ lineas[a].replaceAll('\t', '&nbsp;&nbsp;');
+						matches[index].innerHTML += (counter>1?"<br>":"") + (counter<10? counter + " " : counter) + " "+ lineas[a].replaceAll('\t', '&nbsp;&nbsp;');
 						counter++;
 					}
 					console.log(matches[index].innerHTML);
