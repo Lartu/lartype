@@ -34,6 +34,14 @@ pre{
 	/*border:1px solid #17c0eb;*/
 }
 
+.li{
+	padding:0px;
+	margin:0px;
+	margin-left:12px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
 .code_section{
 	page-break-inside: avoid !important;
 	display:block;

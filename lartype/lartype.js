@@ -78,9 +78,6 @@ var files_to_load=[]
 		texto = texto.replaceAll('>', '&gt;');
 		texto = texto.replaceAll('<', '&lt;');
 
-		//Reemplazos sintácticos de lartype por lartype
-		texto = texto.replaceAll('/li.', '/halfbreak./s.•&nbsp;');
-
 		//Reemplazos sintácticos de lartype por html
 		texto = texto.replaceAll('/section.', '<div class="section">');
 		texto = texto.replaceAll('.section/', '</div>');
@@ -156,6 +153,8 @@ var files_to_load=[]
 		texto = texto.replaceAll('.parallel10/', '</td>');
 		texto = texto.replaceAll('/todo.', '<div class="todo">TODO: ');
 		texto = texto.replaceAll('.todo/', '</div>');
+		texto = texto.replaceAll('/li.', '<div style="margin-left:20px;"><span style="float:left">•</span><div class="li">');
+		texto = texto.replaceAll('.li/', '</div></div>');
 
 		//Esto siempre va al final
 		texto = texto.replaceAll('/[.', '[');
