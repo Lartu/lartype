@@ -27,6 +27,10 @@ if "-init" in sys.argv or "-fix" in sys.argv :
 	call(["cp", "/usr/local/bin/_lartype/lartype.html", os.getcwd()+"/lartype/lartype.html"])
 	call(["cp", "/usr/local/bin/_lartype/styles.css", os.getcwd()+"/lartype/styles.css"])
 	call(["cp", "/usr/local/bin/_lartype/lartype.js", os.getcwd()+"/lartype/lartype.js"])
+	if not("header.html" in os.listdir('./lartype')):
+		call(["cp", "/usr/local/bin/_lartype/header.html", os.getcwd()+"/lartype/header.html"])
+	if not("footer.html" in os.listdir('./lartype')):
+		call(["cp", "/usr/local/bin/_lartype/footer.html", os.getcwd()+"/lartype/footer.html"])
 	if not("images" in os.listdir('.')):
 		call(["mkdir", os.getcwd()+"/images"])
 	if not("sources" in os.listdir('.')):
@@ -90,4 +94,7 @@ if(errors > 0):
 
 print "\033[32;1mEverything okay!\033[0m" 
 
-exit(0)
+if "-full" in sys.argv: #Render without header and footer
+	exit(2)
+else:
+	exit(0)

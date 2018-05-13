@@ -24,13 +24,15 @@ var files_to_load=[]
 			if (request.status >= 200 && request.status < 400) {
 				console.log("List found.");
 				var resp = request.responseText;
-				files_to_load = resp.split("\n");
-				if(files_to_load.length == 0){
+				files_to_load = [];
+				if(resp.indexOf("\n") == -1){
 					files_to_load.push(resp.trim());
-				}else
-				for(a = 0; a < files_to_load.length; a++){
-					files_to_load[a] = files_to_load[a].trim();
-				}	
+				}else{
+					files_to_load = resp.split("\n");
+					for(a = 0; a < files_to_load.length; a++){
+						files_to_load[a] = files_to_load[a].trim();
+					}	
+				}
 				traerTexto();
 			}
 		};

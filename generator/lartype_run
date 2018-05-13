@@ -1,6 +1,12 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 python $DIR/_lartype/lartype_check.py $1 $2 $3
 ret=$?
+
+if [ $ret = 2 ]
+then
+	$DIR/_lartype/generate_full
+fi
+
 if [ $ret = 0 ]
 then
 	$DIR/_lartype/generate
