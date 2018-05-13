@@ -91,7 +91,7 @@ var files_to_load=[]
 		texto = texto.replaceAll('/u.', '<u>');
 		texto = texto.replaceAll('.u/', '</u>');
 		texto = texto.replaceAll('/line.', '<hr>');
-		texto = texto.replaceAll('/right.', '<div class"right">');
+		texto = texto.replaceAll('/right.', '<div class="right">');
 		texto = texto.replaceAll('.right/', '</div>');
 		texto = texto.replaceAll('/code.', '<code class="inlineCode">');
 		texto = texto.replaceAll('.code/', '</code>');
