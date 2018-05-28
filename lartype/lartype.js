@@ -7,6 +7,19 @@ var files_to_load=[]
 		}
 		return str;
 	}
+	
+	String.prototype.reemplazarIntermitente = function(searchStr, replaceStr1, replaceStr2) {
+		var str = this;
+        var estado = true;
+		while(str.indexOf(searchStr) != -1) {
+            if(estado)
+                str = str.replace(searchStr, replaceStr1);
+            else
+                str = str.replace(searchStr, replaceStr2);
+            estado = !estado;
+		}
+		return str;
+	}
 
 	var num = 0;
 	var inner_text = "";
@@ -79,7 +92,66 @@ var files_to_load=[]
 		//Chirimbolos and such
 		texto = texto.replaceAll('>', '&gt;');
 		texto = texto.replaceAll('<', '&lt;');
-
+        
+        //Reemplazos que abren y cierran igual
+        texto = texto.reemplazarIntermitente("****", "/break./break./section./size3.", ".size3/.section/");
+        texto = texto.reemplazarIntermitente("**", "/b.", ".b/");
+        texto = texto.reemplazarIntermitente("___", "<sub>", "</sub>");
+        texto = texto.reemplazarIntermitente("__", "/i.", ".i/");
+        texto = texto.reemplazarIntermitente("^^", "<sup>", "</sup>");
+        texto = texto.reemplazarIntermitente("``", "/code.", ".code/");
+        texto = texto.reemplazarIntermitente("(par)","/section./s.", ".section/");
+        texto = texto.reemplazarIntermitente("(ref)", "<div class='ref'>", "</div>");
+        texto = texto.reemplazarIntermitente("(img)", "/image.", ".image/");
+        texto = texto.reemplazarIntermitente("(center)","/center.", ".center/");
+        texto = texto.reemplazarIntermitente("(caption)","/imagefooter.", ".imagefooter/");
+        texto = texto.reemplazarIntermitente("(li)","/li.", ".li/");
+        texto = texto.reemplazarIntermitente("(todo)","/todo.", ".todo/");
+        
+        //Cosas de Lartype 3
+        texto = texto.replaceAll('/#', '/comm.');
+        texto = texto.replaceAll('#/', '.comm/');
+        texto = texto.replaceAll("(ps)","/parallelsection.");
+        texto = texto.replaceAll("(/ps)",".parallelsection/");
+        texto = texto.replaceAll("(p90)","/parallel90.");
+        texto = texto.replaceAll("(/p90)",".parallel90/");
+        texto = texto.replaceAll("(p80)","/parallel80.");
+        texto = texto.replaceAll("(/p80)",".parallel80/");
+        texto = texto.replaceAll("(p70)","/parallel70.");
+        texto = texto.replaceAll("(/p70)",".parallel70/");
+        texto = texto.replaceAll("(p60)","/parallel60.");
+        texto = texto.replaceAll("(/p60)",".parallel60/");
+        texto = texto.replaceAll("(p50)","/parallel50.");
+        texto = texto.replaceAll("(/p50)",".parallel50/");
+        texto = texto.replaceAll("(p40)","/parallel40.");
+        texto = texto.replaceAll("(/p40)",".parallel40/");
+        texto = texto.replaceAll("(p33)","/parallel33.");
+        texto = texto.replaceAll("(/p33)",".parallel33/");
+        texto = texto.replaceAll("(p30)","/parallel30.");
+        texto = texto.replaceAll("(/p30)",".parallel30/");
+        texto = texto.replaceAll("(p25)","/parallel25.");
+        texto = texto.replaceAll("(/p25)",".parallel25/");
+        texto = texto.replaceAll("(p20)","/parallel20.");
+        texto = texto.replaceAll("(/p20)",".parallel20/");
+        texto = texto.replaceAll("(p10)","/parallel10.");
+        texto = texto.replaceAll("(/p10)",".parallel10/");
+        texto = texto.replaceAll('(table)', '<div style="padding:10px; padding-top:5px; padding-bottom: 0px;"><table class="tabla" cellspacing=0>');
+        texto = texto.replaceAll('(/table)', '</table></div>');
+        texto = texto.replaceAll('(row)', '<tr style="border:1px solid black; padding:5px;">');
+        texto = texto.replaceAll('(/row)', '</tr>');
+        texto = texto.replaceAll('(cell)', '<td style="border:1px solid black;  padding:5px;">');
+        texto = texto.replaceAll('(/cell)', '</td>');
+        texto = texto.replaceAll('(titlecell)', '<td style="border:1px solid black;  padding:5px; background: #f4ede1;">');
+        texto = texto.replaceAll('(/titlecell)', '</td>');
+        texto = texto.replaceAll("(break)","/quarterbreak.");
+         texto = texto.replaceAll("----","/line.");
+        
+        /*texto = texto.replaceAll("    ", "/s.");
+        texto = texto.replaceAll("\r\n\r\n", "/break.");
+        texto = texto.replaceAll("\r\n", "<div class='quarterbreak'></div>");
+        texto = texto.replaceAll("\n", "<div class='quarterbreak'></div>");*/
+        
+        
 		//Reemplazos sintácticos de lartype por html
 		texto = texto.replaceAll('/section.', '<div class="section">');
 		texto = texto.replaceAll('.section/', '</div>');
@@ -98,6 +170,7 @@ var files_to_load=[]
 		texto = texto.replaceAll('/linebreak.', "<br>");
 		texto = texto.replaceAll('/break.', '<div class="break"></div>');
 		texto = texto.replaceAll('/halfbreak.', '<div class="halfbreak"></div>');
+        texto = texto.replaceAll('/quarterbreak.', '<div class="quarterbreak"></div>');
 		texto = texto.replaceAll('/pagebreak.', '<div class="pagebreak"></div>');
 		texto = texto.replaceAll('/codeblock.', '<pre><code class="code_section">');
 		texto = texto.replaceAll('.codeblock/', '</code></pre>');

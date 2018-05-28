@@ -1,10 +1,10 @@
 echo "[*] Installing Lartype"
 
 echo "[*] Copying fonts to /usr/local/share/fonts"
-sudo cp fonts/* /usr/local/share/fonts
+sudo cp -f fonts/* /usr/local/share/fonts
 
 echo "[*] Copying Lartype language highlighting to /usr/share/gtksourceview-3.0/language-specs/"
-sudo cp highlighting/lartype.lang /usr/share/gtksourceview-3.0/language-specs/
+sudo cp -f highlighting/lartype.lang /usr/share/gtksourceview-3.0/language-specs/
 
 echo "[*] Removing old Lartype directory if present"
 sudo rm -rf /usr/local/bin/_lartype
@@ -13,9 +13,9 @@ echo "[*] Creating directory /usr/local/bin/_lartype"
 sudo mkdir /usr/local/bin/_lartype
 
 echo "[*] Copying files to /usr/local/bin/_lartype"
-sudo cp lartype/* /usr/local/bin/_lartype
-sudo cp generator/* /usr/local/bin/_lartype
-sudo cp bin/* /usr/local/bin/_lartype
+sudo cp -f lartype/* /usr/local/bin/_lartype
+sudo cp -f generator/* /usr/local/bin/_lartype
+sudo cp -f bin/* /usr/local/bin/_lartype
 
 echo "[*] Creating symlink in /usr/local/bin"
 sudo ln -s /usr/local/bin/_lartype/lartype_run /usr/local/bin/lartype -f

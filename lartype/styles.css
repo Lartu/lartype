@@ -134,9 +134,21 @@ img{
 	margin:0px;
 }
 
+.ref{
+	font-size:12px;
+	margin:0px;
+}
+
 .halfbreak{
 	margin:0px;
 	height:10px;
+	padding:0px;
+	/*border: 1px solid #ff4d4d;*/
+}
+
+.quarterbreak{
+	margin:0px;
+	height:5px;
 	padding:0px;
 	/*border: 1px solid #ff4d4d;*/
 }
@@ -162,6 +174,24 @@ code{
 	background:#ffe5e9;
 }
 
+.ref code{
+    font-size:10px;
+}
+
+sup{
+    margin-right:2px;
+    font-size:10px;
+}
+
+sub{
+    font-size:10px;
+    margin-right:4px;
+}
+
+.ref sup{
+    font-size:8px;
+}
+
 .image_footer{
 	margin-top:-15px;
 	font-size:0.8em;
@@ -174,6 +204,15 @@ table{
 	margin:0px;
 	/*border: 1px solid #c56cf0;*/
 	font-size:inherit;
+    overflow:hidden;
+}
+
+.tabla{
+    margin: auto;
+    margin-top:0px;
+	margin-bottom:20px;
+    border: 1px solid black;
+    overflow:hidden;
 }
 
 td{
@@ -188,50 +227,62 @@ td{
 td .code_section{
 	page-break-inside: initial !important;
 	font-size: 13px;
+    overflow:hidden;
 }
 
 .parallel90{
 	width: 90%;
+    overflow:hidden;
 }
 
 .parallel80{
 	width: 80%;
+    overflow:hidden;
 }
 
 .parallel70{
 	width: 70%;
+    overflow:hidden;
 }
 
 .parallel60{
 	width: 60%;
+    overflow:hidden;
 }
 
 .parallel50{
 	width: 50%;
+    overflow:hidden;
 }
 
 .parallel40{
 	width: 40%;
+    overflow:hidden;
 }
 
 .parallel33{
 	width: 33%;
+    overflow:hidden;
 }
 
 .parallel30{
 	width: 30%;
+    overflow:hidden;
 }
 
 .parallel25{
 	width: 25%;
+    overflow:hidden;
 }
 
 .parallel20{
 	width: 20%;
+    overflow:hidden;
 }
 
 .parallel10{
 	width: 10%;
+    overflow:hidden;
 }
 
 .todo{
