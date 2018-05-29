@@ -94,7 +94,9 @@ var files_to_load=[]
 		texto = texto.replaceAll('<', '&lt;');
         
         //Reemplazos que abren y cierran igual
-        texto = texto.reemplazarIntermitente("****", "/break./break./section./size3.", ".size3/.section/");
+        texto = texto.reemplazarIntermitente("*****", "/break./break./section./size4.", ".size4/.section/");
+        texto = texto.reemplazarIntermitente("****", "/break./section./size3.", ".size3/.section/");
+        texto = texto.reemplazarIntermitente("***", "/break./section./size2.", ".size2/.section/");
         texto = texto.reemplazarIntermitente("**", "/b.", ".b/");
         texto = texto.reemplazarIntermitente("___", "<sub>", "</sub>");
         texto = texto.reemplazarIntermitente("__", "/i.", ".i/");
@@ -102,13 +104,14 @@ var files_to_load=[]
         texto = texto.reemplazarIntermitente("``", "/code.", ".code/");
         texto = texto.reemplazarIntermitente("(par)","/section./s.", ".section/");
         texto = texto.reemplazarIntermitente("(ref)", "<div class='ref'>", "</div>");
-        texto = texto.reemplazarIntermitente("(img)", "/image.", ".image/");
+        texto = texto.reemplazarIntermitente("(refarea)", "/section.", ".section/");
+        texto = texto.reemplazarIntermitente("(img)", '<div style="padding:10px; padding-top:5px; padding-bottom: 0px;">/image.', ".image/</div>");
         texto = texto.reemplazarIntermitente("(center)","/center.", ".center/");
         texto = texto.reemplazarIntermitente("(caption)","/imagefooter.", ".imagefooter/");
         texto = texto.reemplazarIntermitente("(li)","/li.", ".li/");
         texto = texto.reemplazarIntermitente("(todo)","/todo.", ".todo/");
         
-        //Cosas de Lartype 3
+        //Cosas que se abren y se cierran distinto
         texto = texto.replaceAll('/#', '/comm.');
         texto = texto.replaceAll('#/', '.comm/');
         texto = texto.replaceAll("(ps)","/parallelsection.");
@@ -143,8 +146,11 @@ var files_to_load=[]
         texto = texto.replaceAll('(/cell)', '</td>');
         texto = texto.replaceAll('(titlecell)', '<td style="border:1px solid black;  padding:5px; background: #f4ede1;">');
         texto = texto.replaceAll('(/titlecell)', '</td>');
+        
+        //Cosas que solo se abren
         texto = texto.replaceAll("(break)","/quarterbreak.");
-         texto = texto.replaceAll("----","/line.");
+        texto = texto.replaceAll("(pagebreak)","/pagebreak.");
+        texto = texto.replaceAll("----","/line.");
         
         /*texto = texto.replaceAll("    ", "/s.");
         texto = texto.replaceAll("\r\n\r\n", "/break.");

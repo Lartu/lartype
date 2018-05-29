@@ -4,7 +4,7 @@ from subprocess import call
 
 lartype_logo = ("\033[34;1m\\\033[37;1mLartype\033[33;1m.\033[0m")
 
-if "-pull-update" in sys.argv :
+'''if "-pull-update" in sys.argv :
 	print "Downloading latest "+lartype_logo+" version..."
 	call(["wget", "https://github.com/Lartu/lartype/archive/master.zip"])
 	print "Unpacking..."
@@ -15,7 +15,7 @@ if "-pull-update" in sys.argv :
 	call(["rm", "-rf", "lartype-master"])
 	call(["rm", "master.zip*"])
 	call(["lartype", "-update"])
-	exit(1)
+	exit(1)'''
 
 if "-init" in sys.argv or "-fix" in sys.argv :
 	if "-init" in sys.argv:
@@ -45,7 +45,7 @@ if "-init" in sys.argv or "-fix" in sys.argv :
 			myfile.write("/section.Edit me!.section/")
 	exit(1)
 
-if "-update" in sys.argv:
+if "-update" in sys.argv or "-u" in sys.argv:
 	if ("lartype" in os.listdir('.')):
 		print "Updated the " + lartype_logo + " interpreter in the working directory."
 		call(["cp", "/usr/local/bin/_lartype/lartype.html", os.getcwd()+"/lartype/lartype.html"])
