@@ -110,6 +110,9 @@ var files_to_load=[]
         texto = texto.reemplazarIntermitente("(caption)","/imagefooter.", ".imagefooter/");
         texto = texto.reemplazarIntermitente("(li)","/li.", ".li/");
         texto = texto.reemplazarIntermitente("(todo)","/todo.", ".todo/");
+        texto = texto.reemplazarIntermitente("(rightblock)","<div class='sideblock-right'>", "</div>");
+        
+        texto = texto.reemplazarIntermitente("(leftblock)","<div class='sideblock-left'>", "</div>");
         
         //Cosas que se abren y se cierran distinto
         texto = texto.replaceAll('/#', '/comm.');
@@ -148,7 +151,7 @@ var files_to_load=[]
         texto = texto.replaceAll('(/titlecell)', '</td>');
         
         //Cosas que solo se abren
-        texto = texto.replaceAll("(break)","/quarterbreak.");
+        texto = texto.replaceAll("(break)","/linebreak.");
         texto = texto.replaceAll("(pagebreak)","/pagebreak.");
         texto = texto.replaceAll("----","/line.");
         

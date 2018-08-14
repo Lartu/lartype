@@ -193,6 +193,8 @@ sub{
 }
 
 .image_footer{
+    margin-left:10px;
+    margin-right:10px;
 	margin-top:-15px;
 	font-size:0.8em;
 	text-align:center;
@@ -216,7 +218,6 @@ table{
 }
 
 td{
-	width: 50%;
 	vertical-align:top;
 	text-align: justify;
 	overflow: hidden;
@@ -283,6 +284,36 @@ td .code_section{
 .parallel10{
 	width: 10%;
     overflow:hidden;
+}
+
+.sideblock-right{
+	width: 50%;
+    overflow:hidden;
+    float:right;
+    vertical-align:top;
+}
+
+.sideblock-left{
+	width: 50%;
+    overflow:hidden;
+    float:left;
+    vertical-align:top;
+}
+
+.sideblock-right *{
+	page-break-inside: always;
+    overflow:hidden;
+    margin: 0px;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+
+.sideblock-left *{
+	page-break-inside: always;
+    overflow:hidden;
+    margin: 0px;
+    margin-right: 5px;
+    margin-top: 2px;
 }
 
 .todo{
