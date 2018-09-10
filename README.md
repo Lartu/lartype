@@ -34,31 +34,59 @@ The *sources* folder contains all the Lartype sources that make up your document
 
 The *lartype_sources.cfg* file contains all the Lartype sources that you want to be compiled on your project. Each line should contain the name of a single file located inside the *sources* folder, without the *.lty* extension. When this file is first created, the first line says `main`, for *main.lty*. If you add more files to *sources*, you should add them to this file so they are added to the document once it's generated. Also, the files are compiled in the order they are listed in *lartype_sources.cfg*, so bear that in mind. You can even safely delete *main.lty* and replace it by any other *.lty* file and everything will work fine if you replace the filename accordingly in *lartype_sources.cfg*.
 
-**Writing Your First Lartype Pge**
+**Writing Your First Lartype Page**
+
+(TODO)
 
 **Styling Text**
 
+(TODO)
+
 **Text Location and Alignment**
+
+(TODO)
 
 **Lists**
 
+(TODO)
+
 **Adding Pictures to Your Document**
+
+(TODO)
 
 **Adding References**
 
+(TODO)
+
 **Left and Right Blocks**
+
+(TODO)
 
 **Parallel Sections**
 
+(TODO)
+
 **Creating Tables**
+
+(TODO)
 
 **Breaks, Lines and Page Breaks**
 
+(TODO)
+
 **Inline Code Fragments and Code Blocks**
+
+(TODO)
 
 **Adding New Files to Your Document**
 
+(TODO)
+
 **TODOs and Comments**
 
+(TODO)
+
 **Alternate Image Sizes**
+
+(TODO)
 
