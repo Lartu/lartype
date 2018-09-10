@@ -28,7 +28,7 @@ When you initialize a new Lartype project, three folders (*images*, *lartype* an
 
 ![alt Files Generated](https://lartu.net/projects/lartype/files_generated.png)
 
-The *image* folder is where you should put pictures that you want to use in your Lartype document. 
+The *images* folder is where you should put pictures that you want to use in your Lartype document. 
 
 The *lartype* folder shouldn't be messed with, as it contains the Lartype interpreter. You may, though, modify the *footer.html* and *header.html* located within, in case you want to add or change your document header or footer, respectively. 
 
