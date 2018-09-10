@@ -24,7 +24,9 @@ Download, clone or pull (`--depth 1` recommended!) and run `install_lartype`. La
 
 **Initializing a Lartype Project**
 
-When you initialize a new Lartype project, three folders (*images*, *lartype* and *sources*) and a file (*lartype_sources.cfg*) are automatically generated for you. 
+When you initialize a new Lartype project, three folders (*images*, *lartype* and *sources*) and a file (*lartype_sources.cfg*) are automatically generated for you.
+
+![alt Files Generated](https://lartu.net/projects/lartype/files_generated.png)
 
 The *image* folder is where you should put pictures that you want to use in your Lartype document. 
 
