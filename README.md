@@ -1,10 +1,10 @@
 ![alt version number](https://img.shields.io/badge/version-3.0-green.svg)
 
-# ✒️ Lartype ✒️
+# ✒️ Lartype 3 ✒️
 Lightweight, LaTeX inspired markup document editor.
 
 ## Why Lartype?
-While undoubtedly LaTeX is the best tool for the task, when you need to write simpler essays, texts or documents it's somewhat of an overkill. And it is **huge**, more than 3GB for the whole package! As that was too much for me and my tasks at hand, I decided to write Lartype. I've been using it and I hope you find an use for it too.
+While undoubtedly LaTeX is the best tool for the task, when you need to write simpler essays, texts or documents it's somewhat of an overkill. And it is **huge**, more than 3GB for the whole package! As that was too much for me and my tasks at hand, I decided to write Lartype. I've been using it and I hope you find an use for it too. It also allows to write highly modular documents, with each section written in a different file, so if many people are working on a single document, each should be able to edit a different part without this causing merge problems.
 
 ## What can Lartype do?
 [Judge by yourself](https://lartu.net/projects/lartype/informe.pdf). That's an essay we wrote for an assignment, completely on Lartype. Lartype can generate tables, style text, embed images, align and position sections and more.
@@ -20,5 +20,45 @@ Download, clone or pull (`--depth 1` recommended!) and run `install_lartype`. La
 * Run `lartype` to compile your project to a PDF file.
 * If you update Lartype -by installing a new version-, run `lartype -update` on your project directory to update the Lartype interpreter. Until you do this, you'll still be using the previous version of Lartype.
 
-## Commands
-When you initialize a new Lartype project, three folders and a file are automatically generated for you.
+## How to write a Lartype Document
+
+**Initializing a Lartype Project**
+
+When you initialize a new Lartype project, three folders (*images*, *lartype* and *sources*) and a file (*lartype_sources.cfg*) are automatically generated for you. 
+
+The *image* folder is where you should put pictures that you want to use in your Lartype document. 
+
+The *lartype* folder shouldn't be messed with, as it contains the Lartype interpreter. You may, though, modify the *footer.html* and *header.html* located within, in case you want to add or change your document header or footer, respectively. 
+
+The *sources* folder contains all the Lartype sources that make up your document. When it's first created, this last folder contains one single file: **main.lty**.
+
+The *lartype_sources.cfg* file contains all the Lartype sources that you want to be compiled on your project. Each line should contain the name of a single file located inside the *sources* folder, without the *.lty* extension. When this file is first created, the first line says `main`, for *main.lty*. If you add more files to *sources*, you should add them to this file so they are added to the document once it's generated. Also, the files are compiled in the order they are listed in *lartype_sources.cfg*, so bear that in mind. You can even safely delete *main.lty* and replace it by any other *.lty* file and everything will work fine if you replace the filename accordingly in *lartype_sources.cfg*.
+
+**Writing Your First Lartype Pge**
+
+**Styling Text**
+
+**Text Location and Alignment**
+
+**Lists**
+
+**Adding Pictures to Your Document**
+
+**Adding References**
+
+**Left and Right Blocks**
+
+**Parallel Sections**
+
+**Creating Tables**
+
+**Breaks, Lines and Page Breaks**
+
+**Inline Code Fragments and Code Blocks**
+
+**Adding New Files to Your Document**
+
+**TODOs and Comments**
+
+**Alternate Image Sizes**
+
