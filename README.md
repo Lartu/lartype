@@ -1,6 +1,6 @@
 ![alt version number](https://img.shields.io/badge/version-3.0-green.svg)
 
-# ✒️ Lartype 3 ✒️
+# ✒️ Lartype ✒️
 Lightweight, LaTeX inspired markup document editor.
 
 ## Why Lartype?
