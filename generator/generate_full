@@ -1,12 +1,12 @@
 #Should check if wkhtmltopdf is installed
 echo "[*] Starting Lartype server"
-python /usr/local/bin/_lartype/threadingserver.py &
+python ~/bin/_lartype/threadingserver.py &
 SERVER=$!
 echo "[*] Started with PID $SERVER"
 EXITCODE=1
 while [ $EXITCODE -ne 0 ]
 do
-    /usr/local/bin/_lartype/wkhtmltopdf -B 20mm -T 20mm -R 20mm -L 20mm --disable-smart-shrinking http://localhost:23416/lartype/lartype.html output.pdf 
+    ~/bin/_lartype/wkhtmltopdf -B 20mm -T 20mm -R 20mm -L 20mm --disable-smart-shrinking http://localhost:23416/lartype/lartype.html output.pdf 
     EXITCODE=$?
     if [ $EXITCODE = 1 ]
     then
