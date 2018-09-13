@@ -1,4 +1,4 @@
-![alt version number](https://img.shields.io/badge/version-3.0-green.svg)
+![alt version number](https://img.shields.io/badge/version-3.1-green.svg)
 
 # ✒️ Lartype ✒️
 Lightweight, LaTeX inspired markup document editor.
@@ -19,6 +19,7 @@ Download, clone or pull (`--depth 1` recommended!) and run `install_lartype`. La
 * Run `lartype -init` to initialize a new Lartype project on the current directory. All the required folders and files will be created, along with a demo project.
 * Run `lartype` to compile your project to a PDF file.
 * If you update Lartype -by installing a new version-, run `lartype -update` on your project directory to update the Lartype interpreter. Until you do this, you'll still be using the previous version of Lartype.
+* Should any Lartype files be missing from your project directory, run `lartype -fix` to recreate them.
 
 ## How to write a Lartype Document
 
