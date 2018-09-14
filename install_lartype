@@ -1,20 +1,20 @@
 echo "[*] Installing Lartype"
 
-echo "[*] Copying fonts to /usr/local/share/fonts"
+echo "[*] Copying fonts to ~/share/fonts"
 cp -f fonts/* ~/.fonts
 
 echo "[*] Removing old Lartype directory if present"
-sudo rm -rf ~/bin/_lartype
+rm -rf ~/bin/_lartype
 
-echo "[*] Creating directory /usr/local/bin/_lartype"
-sudo mkdir ~/bin/_lartype
+echo "[*] Creating directory ~/bin/_lartype"
+mkdir ~/bin/_lartype
 
-echo "[*] Copying files to /usr/local/bin/_lartype"
-sudo cp -f lartype/* ~/bin/_lartype
-sudo cp -f generator/* ~/bin/_lartype
-sudo cp -f bin/* ~/bin/_lartype
+echo "[*] Copying files to ~/bin/_lartype"
+cp -f lartype/* ~/bin/_lartype
+cp -f generator/* ~/bin/_lartype
+cp -f bin/* ~/bin/_lartype
 
 echo "[*] Creating symlink in ~/bin"
-sudo ln -s ~/bin/_lartype/lartype_run ~/bin/lartype -f
+ln -s ~/bin/_lartype/lartype_run ~/bin/lartype -f
 
 echo "[*] Lartype successfully installed!"

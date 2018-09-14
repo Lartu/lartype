@@ -15,6 +15,7 @@ port = 23416
 
 server = ThreadingSimpleServer(('', port), SimpleHTTPServer.SimpleHTTPRequestHandler)
 try:
+    print("Lartype server on")
     while 1:
         sys.stdout.flush()
         server.handle_request()
