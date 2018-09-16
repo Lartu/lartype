@@ -16,6 +16,8 @@ body{
 	margin-left:auto;
 	margin-right:auto;
 	overflow:hidden;
+    padding-bottom:0px;
+    margin-bottom:0px;
 }
 
 pre{
@@ -47,7 +49,7 @@ pre{
 	display:block;
 	text-align:left;
 	padding:5px;
-	font-size: 13px;
+	font-size: 12px;
 	background: #dadeea;
 	color: #192a56;
 	margin: 10px;
@@ -205,8 +207,8 @@ table{
 	width: 100%;
 	margin:0px;
 	/*border: 1px solid #c56cf0;*/
-	font-size:inherit;
     overflow:hidden;
+    font-size:inherit;
 }
 
 .tabla{
@@ -215,6 +217,7 @@ table{
 	margin-bottom:20px;
     border: 1px solid black;
     overflow:hidden;
+	font-size:0.8em;
 }
 
 td{
@@ -222,7 +225,6 @@ td{
 	text-align: justify;
 	overflow: hidden;
 	/*border: 1px solid #ffaf40;*/
-	font-size:inherit;
 }
 
 td .code_section{
