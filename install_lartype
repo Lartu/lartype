@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "[*] Installing Lartype"
 
 echo "[*] Copying fonts to ~/share/fonts"
@@ -16,5 +18,9 @@ cp -f bin/* ~/bin/_lartype
 
 echo "[*] Creating symlink in ~/bin"
 ln -s ~/bin/_lartype/lartype_run ~/bin/lartype -f
+
+if grep -Fxq "Lartype" ~/.bashrc; then
+    echo "PATH=\"\$PATH:\$HOME/bin\" #Line added by Lartype" >> ~/.bashrc
+fi
 
 echo "[*] Lartype successfully installed!"

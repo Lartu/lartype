@@ -1,3 +1,4 @@
+from os.path import expanduser
 import os
 import sys
 from subprocess import call
@@ -24,13 +25,13 @@ if "-init" in sys.argv or "-fix" in sys.argv :
 		print "Fixing missing " + lartype_logo + " project files in " + os.getcwd()
 	if not("lartype" in os.listdir('.')):
 		call(["mkdir", os.getcwd()+"/lartype"])
-	call(["cp", "~/bin/_lartype/lartype.html", os.getcwd()+"/lartype/lartype.html"])
-	call(["cp", "~/bin/_lartype/styles.css", os.getcwd()+"/lartype/styles.css"])
-	call(["cp", "~/bin/_lartype/lartype.js", os.getcwd()+"/lartype/lartype.js"])
+	call(["cp", expanduser("~")+"/bin/_lartype/lartype.html", os.getcwd()+"/lartype/lartype.html"])
+	call(["cp", expanduser("~")+"/bin/_lartype/styles.css", os.getcwd()+"/lartype/styles.css"])
+	call(["cp", expanduser("~")+"/bin/_lartype/lartype.js", os.getcwd()+"/lartype/lartype.js"])
 	if not("header.html" in os.listdir('./lartype')):
-		call(["cp", "~/bin/_lartype/header.html", os.getcwd()+"/lartype/header.html"])
+		call(["cp", expanduser("~")+"/bin/_lartype/header.html", os.getcwd()+"/lartype/header.html"])
 	if not("footer.html" in os.listdir('./lartype')):
-		call(["cp", "~/bin/_lartype/footer.html", os.getcwd()+"/lartype/footer.html"])
+		call(["cp", expanduser("~")+"/bin/_lartype/footer.html", os.getcwd()+"/lartype/footer.html"])
 	if not("images" in os.listdir('.')):
 		call(["mkdir", os.getcwd()+"/images"])
 	if not("sources" in os.listdir('.')):
@@ -48,9 +49,9 @@ if "-init" in sys.argv or "-fix" in sys.argv :
 if "-update" in sys.argv or "-u" in sys.argv:
 	if ("lartype" in os.listdir('.')):
 		print "Updated the " + lartype_logo + " interpreter in the working directory."
-		call(["cp", "~/bin/_lartype/lartype.html", os.getcwd()+"/lartype/lartype.html"])
-		call(["cp", "~/bin/_lartype/styles.css", os.getcwd()+"/lartype/styles.css"])
-		call(["cp", "~/bin/_lartype/lartype.js", os.getcwd()+"/lartype/lartype.js"])
+		call(["cp", expanduser("~")+"/bin/_lartype/lartype.html", os.getcwd()+"/lartype/lartype.html"])
+		call(["cp", expanduser("~")+"/bin/_lartype/styles.css", os.getcwd()+"/lartype/styles.css"])
+		call(["cp", expanduser("~")+"/bin/_lartype/lartype.js", os.getcwd()+"/lartype/lartype.js"])
 	else:
 		print("\033[31;1mError:\033[0m This directory does not contain a valid Lartype project.")
 		print("Run \033[32;1mlartype -init\033[0m to initialize one or fix missing files.");
