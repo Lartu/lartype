@@ -3,12 +3,12 @@
 echo "[*] Installing Lartype"
 
 echo "[*] Copying fonts to ~/share/fonts"
-if [ ! -d ~/.fonts ]; then
+if [ ! -d "$HOME/.fonts" ]; then
     mkdir ~./fonts
 fi
 cp -f fonts/* ~/.fonts
 
-if [ -d ~/bin/_lartype ]; then
+if [ -d "$HOME/bin/_lartype" ]; then
     echo "[*] Removing old Lartype directory"
     rm -rf ~/bin/_lartype
 fi
